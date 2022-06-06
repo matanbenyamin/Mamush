@@ -36,7 +36,7 @@ if st.button('Sign Up'):
 
 	import csv, io
 
-	test_data = df.values
+	test_data = df.to_numpy()
 
 	# csv module can write data in io.StringIO buffer only
 	s = io.StringIO()
