@@ -6,6 +6,6 @@ streamlit-plotly-events
 plotly
 opencv-python-headless
 pyTelegramBotAPI
-
+dataframe_image
 
 
