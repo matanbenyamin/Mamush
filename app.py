@@ -27,9 +27,32 @@ import cv2
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 if st.button('Sign Up'):
-	dfi.export(df,"mytable.png")
+	# dfi.export(df,"mytable.png")
 	image = cv2.imread('mytable.png')
 	image = open('mytable.png', 'rb')
 	chat_id = '630924196'
-	tb.send_photo(chat_id=chat_id, photo=image)
+	# tb.send_photo(chat_id=chat_id, photo=image)
 
+
+	import csv, io
+
+	test_data = df.values
+
+	# csv module can write data in io.StringIO buffer only
+	s = io.StringIO()
+	csv.writer(s).writerows(test_data)
+	s.seek(0)
+
+	# python-telegram-bot library can send files only from io.BytesIO buffer
+	# we need to convert StringIO to BytesIO
+	buf = io.BytesIO()
+
+	# extract csv-string, convert it to bytes and write to buffer
+	buf.write(s.getvalue().encode())
+	buf.seek(0)
+
+	# set a filename with file's extension
+	buf.name = f'secret_report_for_cool_guys.csv'
+
+	# send the buffer as a regular file
+	tb.send_document(chat_id, buf)
