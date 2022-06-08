@@ -55,6 +55,8 @@ if signupbut:
 
     ph4 = st.empty()
     ver = ph4.button('Verify')
+else:
+    ver = False
 
 if ver:
     st.success("You have successfully created an account.Go to the Login Menu to login")
