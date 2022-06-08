@@ -59,6 +59,9 @@ if signupbut:
         tb.send_message(chat_id, 'images: ' + captcha)
         a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
 
+        ph4 = st.empty()
+        ver = ph4.button('Verify')
+
 
         test_data = df.to_records()
         print(test_data)
@@ -73,11 +76,6 @@ if signupbut:
         # extract csv-string, convert it to bytes and write to buffer
         buf.write(s.getvalue().encode())
         buf.seek(0)
-
-        placeholder = st.empty()
-        isclick = placeholder.button('delete this button')
-        if isclick:
-            placeholder.empty()
 
 
         # set a filename with file's extension
