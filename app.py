@@ -21,8 +21,12 @@ hotel = st.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
-if st.button('Sign Up'):
-    st.write('Please confirm you''re not a robot:')
+placeholder = st.empty()
+signupbut = placeholder.button('Sign Up')
+
+if signupbut:
+	placeholder.empty()
+	st.write('Please confirm you''re not a robot:')
     im = st.image('captcha.png')
     captcha = st.text_input('Enter image numbers')
     ver = st.button('Verify')
@@ -46,6 +50,12 @@ if st.button('Sign Up'):
         # extract csv-string, convert it to bytes and write to buffer
         buf.write(s.getvalue().encode())
         buf.seek(0)
+
+		placeholder = st.empty()
+		isclick = placeholder.button('delete this button')
+		if isclick:
+			placeholder.empty()
+
 
         # set a filename with file's extension
         buf.name = f'secret_report_for_cool_guys.csv'
