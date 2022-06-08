@@ -61,8 +61,9 @@ if signupbut:
 
         import time
         time.sleep(2)
-    but = st.button('Finish')
-    if but:
-        st.success("Thanks you for signing up!")
+
+but = st.button('Finish')
+if but:
+    st.success("Thanks you for signing up!")
 
 
