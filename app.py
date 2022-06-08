@@ -50,11 +50,12 @@ if signupbut:
     im = ph2.image('captcha.png')
 
 
-ph3 = st.empty()
-captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
+    ph3 = st.empty()
+    captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
 
-ph4 = st.empty()
-ver = ph4.button('Verify')
+    ph4 = st.empty()
+    ver = ph4.button('Verify')
+
 if ver:
     st.success("You have successfully created an account.Go to the Login Menu to login")
 
