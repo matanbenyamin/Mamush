@@ -11,6 +11,10 @@ tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 chat_id = '630924196'
 
 
+with st.sidebar:
+    st.image('logo.png', use_column_width=True)
+
+
 # Initialization
 if 'first_run' not in st.session_state:
     st.session_state['first_run'] = True
