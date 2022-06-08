@@ -13,7 +13,7 @@ new_user = ph9.text_input('Email Address')
 ph7 = st.empty()
 new_user = ph7.text_input('Username')
 ph10 = st.empty()
-ph10.write('Password must contain 14 characters, out of which at least one latin but not more the 4, 2 special characters, and one math symbol. if you password contains the letter 'r', exactly two symbols are required')
+ph10.write('Password must contain 14 characters, out of which at least one latin but not more the 4, 2 special characters, and one math symbol. if your password contains the letter ''o'', exactly two symbols are required')
 ph8 = st.empty()
 new_passwd = ph8.text_input('Password', type='password')
 
@@ -47,7 +47,7 @@ if signupbut:
     ph2 = st.empty()
     im = ph2.image('captcha.png')
     ph3 = st.empty()
-    captcha = ph3.text_input('Enter image numbers')
+    captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
     ph4 = st.empty()
     ver = ph4.button('Verify')
     if ver:
