@@ -6,9 +6,12 @@ import cv2
 
 # streamlit run app.py
 
-st.subheader("Please Create an Account")
-new_user = st.text_input('Username')
-new_passwd = st.text_input('Password', type='password')
+ph6 = st.empty()
+ph6.subheader("Please Create an Account")
+ph7 = st.empty()
+new_user = ph7.text_input('Username')
+ph8 = st.empty()
+new_passwd = ph8.text_input('Password', type='password')
 
 
 ph1 = st.empty()
@@ -33,9 +36,7 @@ signupbut = placeholder.button('Sign Up')
 
 if signupbut:
     placeholder.empty()
-    [eval('ph%s.empty()' % i) for i in range(1,6)]
-    ph1.empty()
-    ph2.empty()
+    [eval('ph%s.empty()' % i) for i in range(1,9)]
     st.write('Please confirm you''re not a robot:')
     im = st.image('captcha.png')
     captcha = st.text_input('Enter image numbers')
