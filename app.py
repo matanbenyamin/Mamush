@@ -26,6 +26,7 @@ placeholder = st.empty()
 signupbut = placeholder.button('Sign Up')
 
 if signupbut:
+    placeholder.empty()
     st.write('Please confirm you''re not a robot:')
     im = st.image('captcha.png')
     captcha = st.text_input('Enter image numbers')
