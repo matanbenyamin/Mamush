@@ -48,10 +48,12 @@ if signupbut:
     ph1.write('Please confirm you''re not a robot:')
     ph2 = st.empty()
     im = ph2.image('captcha.png')
-    ph3 = st.empty()
-    captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
-    ph4 = st.empty()
 
+
+ph3 = st.empty()
+captcha = ph3.text_input('Enter image numbers (make sure images do not contradict each other)')
+
+ph4 = st.empty()
 ver = ph4.button('Verify')
 if ver:
     st.success("You have successfully created an account.Go to the Login Menu to login")
