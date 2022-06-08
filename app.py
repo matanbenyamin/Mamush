@@ -5,8 +5,7 @@ import telebot
 import cv2
 
 # streamlit run app.py
-(13
- תוים, מתוכם לפחות 6 ספרות ולא יותר מ2 אותיות באנגלית, 1 בעברית ו5 תוים מיוחדים.במידה ונבחר "!" כתו מיוחד יש לחלק את מספר הספרות המקיסמלי ב-2 ולחכות להוראות נוספות)
+
 ph6 = st.empty()
 ph6.subheader("Please Create an Account")
 ph9 = st.empty()
