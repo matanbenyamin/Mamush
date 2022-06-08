@@ -5,11 +5,16 @@ import telebot
 import cv2
 
 # streamlit run app.py
-
+(13
+ תוים, מתוכם לפחות 6 ספרות ולא יותר מ2 אותיות באנגלית, 1 בעברית ו5 תוים מיוחדים.במידה ונבחר "!" כתו מיוחד יש לחלק את מספר הספרות המקיסמלי ב-2 ולחכות להוראות נוספות)
 ph6 = st.empty()
 ph6.subheader("Please Create an Account")
+ph9 = st.empty()
+new_user = ph9.text_input('Email Address')
 ph7 = st.empty()
 new_user = ph7.text_input('Username')
+ph10 = st.empty()
+ph10.write('Password must contain 14 characters, out of which at least one latin but not more the 4, 2 special characters, and one math symbol. if you password contains the letter 'r', exactly two symbols are required')
 ph8 = st.empty()
 new_passwd = ph8.text_input('Password', type='password')
 
@@ -36,13 +41,21 @@ signupbut = placeholder.button('Sign Up')
 
 if signupbut:
     placeholder.empty()
-    a = [eval('ph%s.empty()' % i) for i in range(1,9)]
-    st.write('Please confirm you''re not a robot:')
-    im = st.image('captcha.png')
-    captcha = st.text_input('Enter image numbers')
-    ver = st.button('Verify')
+    a = [eval('ph%s.empty()' % i) for i in range(1,11)]
+
+    ph1 = st.empty()
+    ph1.write('Please confirm you''re not a robot:')
+    ph2 = st.empty()
+    im = ph2.image('captcha.png')
+    ph3 = st.empty()
+    captcha = ph3.text_input('Enter image numbers')
+    ph4 = st.empty()
+    ver = ph4.button('Verify')
     if ver:
+        a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
         st.success("You have successfully created an account.Go to the Login Menu to login")
+
+        # here - st image with my letter
         df = pd.DataFrame({"username": [new_user], "password": [new_passwd],
                            "school": [school], "mom_name": [mom_name],
                            "hotel": [hotel], "type": [type], "images": [captcha]})
