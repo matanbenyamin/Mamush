@@ -58,12 +58,12 @@ if signupbut:
         # here - st image with my letter
         tb.send_message(chat_id, 'images: ' + captcha)
         a = [eval('ph%s.empty()' % i) for i in range(1, 5)]
+        ph4 = st.empty()
+        ver2 = ph4.button('Vy')
 
         import time
         time.sleep(2)
 
-but = st.button('Finish')
-if but:
-    st.success("Thanks you for signing up!")
+
 
 
