@@ -10,7 +10,6 @@ st.subheader("Please Create an Account")
 new_user = st.text_input('Username')
 new_passwd = st.text_input('Password', type='password')
 
-placeholder = st.empty()
 
 ph1 = st.empty()
 ph1.write('Please answer the security questions:')
@@ -26,6 +25,7 @@ hotel = st.text_input('Fancy Boho chic hotel or airbnb in a secluded beach?')
 TOKEN = "2034688341:AAGiWVOQZ_wJUDLEGPbqXn80LzJ9palMWu0"
 tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 
+placeholder = st.empty()
 signupbut = placeholder.button('Sign Up')
 
 if signupbut:
