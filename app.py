@@ -29,13 +29,13 @@ if  st.session_state['first_run']:
     ph7 = st.empty()
     new_user = ph7.text_input('Username')
     ph10 = st.empty()
-    ph10.write('Password must contain 14 characters, out of which at least one latin but not more the 4, 2 special characters, and one math symbol. if your password contains the letter ''o'', exactly two symbols are required')
+    # ph10.write('Password must contain 14 characters, out of which at least one latin but not more the 4, 2 special characters, and one math symbol. if your password contains the letter ''o'', exactly two symbols are required')
     ph8 = st.empty()
     new_passwd = ph8.text_input('Password', type='password')
 
 
     ph1 = st.empty()
-    ph1.write('Please answer the security questions:')
+    ph1.write('Please answer the security questions (for personal identification):')
     ph2 = st.empty()
     school = ph2.text_input('Name of your first school?')
     ph3 = st.empty()
