@@ -7,5 +7,6 @@ plotly
 opencv-python-headless
 pyTelegramBotAPI
 dataframe_image
+selenium
 
 
