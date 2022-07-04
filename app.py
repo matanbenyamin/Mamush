@@ -11,6 +11,8 @@ tb = telebot.TeleBot(TOKEN)  # create a new Telegram Bot object
 chat_id = '630924196'
 
 
+
+st.text('דוח מצב המדע בשראל')
 with st.sidebar:
     st.image('logo.png', use_column_width=True)
 
